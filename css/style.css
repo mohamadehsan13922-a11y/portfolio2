@@ -772,3 +772,94 @@ ul { list-style: none; }
   .section { padding: 60px 18px; }
   .skills-grid { grid-template-columns: repeat(2, 1fr); }
 }
+
+
+/* ===== JavaScript-enhanced controls ===== */
+.project-search-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  margin: 0 0 24px;
+}
+.project-search {
+  width: min(100%, 420px);
+  padding: 13px 17px;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  outline: none;
+  background: var(--bg-card);
+  color: var(--text);
+  font: inherit;
+  transition: var(--transition);
+}
+.project-search:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px var(--primary-glow);
+}
+.project-count { color: var(--text-muted); font-size: .85rem; white-space: nowrap; }
+.project-card[hidden] { display: none !important; }
+.back-to-top {
+  position: fixed;
+  bottom: 24px;
+  left: 24px;
+  z-index: 1000;
+  width: 46px;
+  height: 46px;
+  border: 1px solid var(--border);
+  border-radius: 15px;
+  background: var(--bg-elevated);
+  color: var(--text);
+  font-size: 1.5rem;
+  cursor: pointer;
+  box-shadow: var(--shadow);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: var(--transition);
+}
+.back-to-top.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+.back-to-top:hover {
+  background: var(--primary);
+  color: white;
+  border-color: var(--primary);
+}
+@media (max-width: 480px) {
+  .project-search-wrap { align-items: stretch; flex-direction: column; }
+  .project-search { width: 100%; }
+}
+
+
+/* GitHub buttons and project repository links */
+.btn-github {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: 1px solid var(--border);
+  color: var(--text);
+  background: var(--bg-card);
+  border-radius: 50px;
+  padding: 12px 20px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  transition: var(--transition);
+}
+.btn-github:hover { border-color: var(--primary); transform: translateY(-2px); box-shadow: 0 8px 25px var(--primary-glow); }
+.github-project-link {
+  border: 1px solid var(--border);
+  border-radius: 9px;
+  padding: 6px 10px;
+  white-space: nowrap;
+}
+.github-project-link:hover { border-color: var(--primary); }
+.github-footer { color: var(--text-muted); font-size: 0.9rem; transition: var(--transition); }
+.github-footer:hover { color: var(--primary); }
+@media (max-width: 600px) {
+  .hero-btns { flex-wrap: wrap; }
+  .project-links { flex-wrap: wrap; }
+}
